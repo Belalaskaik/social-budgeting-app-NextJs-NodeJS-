@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,7 +15,7 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
+import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -21,6 +23,7 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import Button from '@mui/material/Button';
 
 function Copyright(props) {
   return (
@@ -81,7 +84,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
+// Create a styled Button component
+const BlackButton = styled(Button)(({ theme }) => ({
+  backgroundColor: 'black',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: '#333', // A slightly lighter black for hover state
+  },
+  marginLeft: theme.spacing(2), // Add spacing between buttons
+}));
+
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
@@ -98,34 +110,46 @@ export default function Dashboard() {
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              display: 'flex', // Add this
+              justifyContent: 'space-between', // Add this
+              alignItems: 'center', // Add this
             }}
           >
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer}
-              sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Dashboard
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="open drawer"
+                onClick={toggleDrawer}
+                sx={{
+                  marginRight: '36px',
+                  ...(open && { display: 'none' }),
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+              >
+                Dashboard
+              </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Link href="/login" passHref legacyBehavior>
+                <Button component="a" color="inherit">Login</Button>
+              </Link>
+              <Link href="/signup" passHref legacyBehavior>
+                <Button component="a" color="inherit">Sign Up</Button>
+              </Link>
+              <IconButton color="inherit">
+                <Badge badgeContent={4} color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+            </Box>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -192,6 +216,11 @@ export default function Dashboard() {
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Link href="/orders" passHref>
+                    <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                      Recent Orders
+                    </Typography>
+                  </Link>
                   <Orders />
                 </Paper>
               </Grid>
