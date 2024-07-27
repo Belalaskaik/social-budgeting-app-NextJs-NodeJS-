@@ -275,6 +275,7 @@ export default function Checkout() {
                     sx={{
                       alignSelf: "start",
                       width: { xs: "100%", sm: "auto" },
+                      color: "blue",
                     }}
                   >
                     Go to my dashboard
@@ -326,7 +327,9 @@ export default function Checkout() {
                     variant="contained"
                     endIcon={<ChevronRightRoundedIcon />}
                     onClick={handleNext}
-                    sx={{ width: { xs: "100%", sm: "fit-content" } }}
+                    sx={{
+                      width: { xs: "100%", sm: "fit-content", color: "blue" },
+                    }}
                   >
                     {activeStep === steps.length - 1 ? "Place order" : "Next"}
                   </Button>
