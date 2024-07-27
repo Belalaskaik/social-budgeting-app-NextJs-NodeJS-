@@ -1,13 +1,10 @@
-import './globals.css';
+import "./globals.css";
 
-export default function DashboardLayout({
-  children, // will be a page or nested layout
-}) {
+export default function DashboardLayout({ children }) {
   return (
-    <section>
-      <nav></nav>
-    
-      {children}
-    </section>
-  )
+    <html lang="en">
+      <head>{/* Add custom head elements here */}</head>
+      <body>{children}</body>
+    </html>
+  );
 }
