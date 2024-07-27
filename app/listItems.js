@@ -28,37 +28,12 @@ function ListItemLink({ icon, primary, href }) {
 export const mainListItems = (
   <React.Fragment>
     <ListItemLink href="/" icon={<DashboardIcon />} primary="Dashboard" />
-    <ListItemLink href="/checkout" icon={<ShoppingCartIcon />} primary="Orders" />
-    <ListItemLink href="/customers" icon={<PeopleIcon />} primary="Customers" />
-    <ListItemLink href="/reports" icon={<BarChartIcon />} primary="Reports" />
-    <ListItemLink href="/integrations" icon={<LayersIcon />} primary="Integrations" />
+    <ListItemLink
+      href="/checkout"
+      icon={<ShoppingCartIcon />}
+      primary="Orders"
+    />
     <ListItemLink href="/login" icon={<LoginIcon />} primary="Login" />
     <ListItemLink href="/signup" icon={<PersonAddIcon />} primary="Sign Up" />
-  </React.Fragment>
-);
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
   </React.Fragment>
 );
