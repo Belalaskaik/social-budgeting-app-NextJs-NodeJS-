@@ -1,11 +1,15 @@
 import "./globals.css";
 
-export default function DashboardLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
-    <section>
-      <nav></nav>
-    
-      {children}
-    </section>
+    <html lang="en">
+      <body>
+        <section>
+          <nav></nav>
+        
+          {children}
+        </section>
+      </body>
+    </html>
   )
 }
