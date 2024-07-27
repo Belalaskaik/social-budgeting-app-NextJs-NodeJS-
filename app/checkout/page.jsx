@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -17,6 +16,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Typography from "@mui/material/Typography";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Link from "next/link";
 
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
@@ -129,15 +129,16 @@ export default function Checkout() {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "end", height: 150 }}>
-            <Button
-              startIcon={<ArrowBackRoundedIcon />}
-              component="a"
-              href="/material-ui/getting-started/templates/"
-              sx={{ ml: "-8px" }}
-            >
-              Back to
-              <SitemarkIcon />
-            </Button>
+            <Link href=".." passHref>
+              <Button
+                startIcon={<ArrowBackRoundedIcon />}
+                component="a"
+                sx={{ ml: "-8px" }}
+              >
+                Back to
+                <SitemarkIcon />
+              </Button>
+            </Link>
           </Box>
           <Box
             sx={{
@@ -185,15 +186,15 @@ export default function Checkout() {
                 justifyContent: "space-between",
               }}
             >
-              <Button
-                startIcon={<ArrowBackRoundedIcon />}
-                component="a"
-                href="/material-ui/getting-started/templates/"
-                sx={{ alignSelf: "start" }}
-              >
-                Back to
-                <SitemarkIcon />
-              </Button>
+              <Link href=".." passHref>
+                <Button
+                  startIcon={<ArrowBackRoundedIcon />}
+                  component="a"
+                  sx={{ alignSelf: "start" }}
+                >
+                  Back to Dashboard
+                </Button>
+              </Link>
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
             </Box>
             <Box
