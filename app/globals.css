@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+aside {
+  border: 2px solid #4A5568; /* Adding a border to the aside element */
+  border-radius: 8px; /* Adding rounded corners to the aside element */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow to the aside element */
+}
