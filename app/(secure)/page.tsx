@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 import { useUserService } from '_services';
 import { Spinner } from '_components';
+import Dashboard from '../dashboard/page';
 
 export default Home;
 
@@ -20,8 +21,8 @@ function Home() {
         return (
             <>
                 <h1>Hi {user.firstName}!</h1>
-                <p>You&apos;re logged in with Next.js & JWT!!</p>
-                <p><Link href="/users">Manage Users</Link></p>
+                <p>You&apos;re logged in</p>
+                <Dashboard />
             </>
         );
     } else {

@@ -1,6 +1,7 @@
 import "./globals.css";
 import React from 'react';
-import LogoutButton from './components/LogoutButton';
+// import LogoutButton from './components/LogoutButton';
+import { Nav } from '_components'; // Import Nav component
 
 export default function DashboardLayout({ children }) {
   return (
@@ -10,8 +11,7 @@ export default function DashboardLayout({ children }) {
         <div>
           <header>
             <nav>
-              {/* Other navigation items */}
-              <LogoutButton />
+            <Nav />
             </nav>
           </header>
           <main>{children}</main>

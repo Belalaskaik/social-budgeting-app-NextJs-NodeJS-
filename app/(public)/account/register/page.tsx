@@ -25,6 +25,7 @@ function Register() {
     }
 
     async function onSubmit(user: any) {
+        user.balance = 1000; // Set default balance
         await userService.register(user);
     }
 
