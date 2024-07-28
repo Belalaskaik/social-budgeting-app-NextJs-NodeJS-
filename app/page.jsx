@@ -23,6 +23,8 @@ import Chart from "./Chart";
 import Deposits from "./Deposits";
 import Orders from "./Orders";
 
+
+
 function Copyright(props) {
   return (
     <Typography
@@ -92,6 +94,7 @@ const defaultTheme = createTheme();
 
 export default function Page() {
   const [open, setOpen] = React.useState(true);
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -202,6 +205,8 @@ export default function Page() {
                 </Paper>
               </Grid>
             </Grid>
+            <Typography variant="h6" gutterBottom>
+            </Typography>
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
