@@ -1,8 +1,10 @@
+"use server"
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import { auth } from '_helpers/server';
 import { Alert, Nav } from '_components';
+
 
 export default Layout;
 
