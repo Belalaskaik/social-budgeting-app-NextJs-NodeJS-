@@ -7,9 +7,12 @@ import Link from 'next/link';
 import { styled } from '@mui/system';
 import { theme, NeonBox, NeonButton } from '../theme';
 import { signUp } from './actions';
+import { ZodErrors } from './zodErrors';
 
 const initialState = {
-  message: "Hello World",
+  ok: null,
+  errors: null,
+  message: null,
   fields: {}
 };
 
@@ -17,7 +20,7 @@ export default function SignUp() {
   const [state, formAction] = useFormState(signUp, initialState);
 
   useEffect(() => {
-    if (state.fields && Object.keys(state.fields).length > 0) {
+    if (state.ok && state.fields && Object.keys(state.fields).length > 0) {
       console.log('Sign-up data:', state.fields);
     }
   }, [state]);
@@ -40,6 +43,7 @@ export default function SignUp() {
               autoComplete="name"
               autoFocus
             />
+            <ZodErrors errors={state.errors?.name} />
             <TextField
               margin="normal"
               required
@@ -49,6 +53,7 @@ export default function SignUp() {
               name="email"
               autoComplete="email"
             />
+            <ZodErrors errors={state.errors?.email} />
             <TextField
               margin="normal"
               required
@@ -59,6 +64,7 @@ export default function SignUp() {
               id="password"
               autoComplete="new-password"
             />
+            <ZodErrors errors={state.errors?.password} />
             <NeonButton
               type="submit"
               fullWidth
@@ -68,6 +74,11 @@ export default function SignUp() {
               Sign Up
             </NeonButton>
           </Box>
+          {state.message && (
+            <Typography color="primary" sx={{ mt: 2 }}>
+              {state.message}
+            </Typography>
+          )}
           <Box sx={{ mt: 3, width: '100%' }}>
             <Link href="/" passHref legacyBehavior>
               <NeonButton
