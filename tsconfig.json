@@ -18,10 +18,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./app",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/checkdb/reoute.js"],
   "exclude": ["node_modules"]
 }
