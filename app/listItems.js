@@ -7,12 +7,10 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PeopleIcon from "@mui/icons-material/People";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import LayersIcon from "@mui/icons-material/Layers";
-import AssignmentIcon from "@mui/icons-material/Assignment";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import TransactionForm from "./Transaction"; // Ensure the path is correct
+import Box from "@mui/material/Box";
 
 function ListItemLink({ icon, primary, href }) {
   return (
@@ -35,5 +33,9 @@ export const mainListItems = (
     />
     <ListItemLink href="/login" icon={<LoginIcon />} primary="Login" />
     <ListItemLink href="/signup" icon={<PersonAddIcon />} primary="Sign Up" />
+    {/* Add the TransactionForm component */}
+    <Box sx={{ mt: 5, p: 2 }}>
+      <TransactionForm />
+    </Box>
   </React.Fragment>
 );
