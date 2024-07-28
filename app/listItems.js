@@ -33,7 +33,9 @@ export const mainListItems = (
       icon={<ShoppingCartIcon />}
       primary="Orders"
     />
-    <ListItemLink href="/login" icon={<LoginIcon />} primary="Login" />
-    <ListItemLink href="/signup" icon={<PersonAddIcon />} primary="Sign Up" />
+    <ListItemLink href="/account/login" icon={<LoginIcon />} primary="Login" />
+    <ListItemLink href="/account/register" icon={<PersonAddIcon />} primary="Sign Up" />
   </React.Fragment>
 );
+
+export const secondaryListItems = [];
